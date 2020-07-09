@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webui-deployment
+  labels:
+    app: webui
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: webui
+  template:
+    metadata:
+      labels:
+        app: webui
+    spec:
+      containers:
+      - name: webui
+        image: k8sproject/webui_service
+        env:
+        - name: PRODUCT
+          value: product-service
+        - name: CATALOG
+          value: catalog-service
+        ports:
+        - containerPort: 80

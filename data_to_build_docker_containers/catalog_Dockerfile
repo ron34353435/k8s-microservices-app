@@ -1,0 +1,7 @@
+FROM python:3
+WORKDIR /usr/src/app
+RUN pip install --no-cache-dir flask
+RUN pip install --no-cache-dir requests
+COPY ./k8s-project-data/catalog_service .
+EXPOSE 80
+CMD [ "python", "./catalog.py" ]

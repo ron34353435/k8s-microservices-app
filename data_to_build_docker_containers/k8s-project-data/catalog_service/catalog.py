@@ -1,8 +1,6 @@
 from flask import Flask, request, send_from_directory, render_template, jsonify
 import os
 
-os.environ["APP_FILE"] = "catalog.py"
-
 #flask app object
 app = Flask(__name__)
 

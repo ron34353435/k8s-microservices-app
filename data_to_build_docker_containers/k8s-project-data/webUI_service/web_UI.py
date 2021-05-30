@@ -10,9 +10,9 @@ app = Flask(__name__, template_folder="shopfiles")
 #In future it will be name of service
 PRODUCT_ENV = os.environ.get('PRODUCT')
 CATALOG_ENV = os.environ.get('CATALOG')
-PRODUCT_URL = r"http://{}/{}".format(PRODUCT_ENV,"{}")
+PRODUCT_URL = r"http://{}/{}:8080".format(PRODUCT_ENV,"{}")
 print(PRODUCT_URL)
-CATALOG_URL = r"http://{}/".format(CATALOG_ENV)
+CATALOG_URL = r"http://{}:8080".format(CATALOG_ENV)
 print(CATALOG_URL)
 
 def render_product_by_service(product):
@@ -92,4 +92,4 @@ def product(path):
             
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=8080)

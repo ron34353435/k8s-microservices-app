@@ -10,7 +10,7 @@ app = Flask(__name__, template_folder="shopfiles")
 #In future it will be name of service
 PRODUCT_ENV = os.environ.get('PRODUCT')
 CATALOG_ENV = os.environ.get('CATALOG')
-PRODUCT_URL = r"http://{}/{}:8080".format(PRODUCT_ENV,"{}")
+PRODUCT_URL = r"http://{}:8080/{}".format(PRODUCT_ENV,"{}")
 print(PRODUCT_URL)
 CATALOG_URL = r"http://{}:8080".format(CATALOG_ENV)
 print(CATALOG_URL)

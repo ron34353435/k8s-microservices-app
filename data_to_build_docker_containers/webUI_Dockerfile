@@ -4,4 +4,4 @@ RUN pip install --no-cache-dir flask
 RUN pip install --no-cache-dir requests
 COPY ./k8s-project-data/webUI_service .
 EXPOSE 8080
-CMD [ "python", "web_UI.py" ]
+CMD [ "python", "app.py" ]

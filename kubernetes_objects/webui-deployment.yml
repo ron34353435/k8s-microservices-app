@@ -23,4 +23,4 @@ spec:
         - name: CATALOG
           value: catalog-service
         ports:
-        - containerPort: 80
+        - containerPort: 8080
